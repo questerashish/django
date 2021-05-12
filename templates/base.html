@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../static/css/base.css">
+
+    <style>
+        @media (min-width: 640px) {
+            table {
+                display: inline-table !important;
+            }
+
+            thead tr:not(:first-child) {
+                display: none;
+            }
+        }
+
+        td:not(:last-child) {
+            border-bottom: 0;
+        }
+
+        th:not(:last-child) {
+            border-bottom: 2px solid rgba(0, 0, 0, .1);
+        }
+
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: red;
+            color: white;
+            text-align: center;
+        }
+
+        .main {
+            background-image: url('/static/images/bg.jpg');
+            background-repeat: no-repeat, repeat;
+            background-color: #cccccc;
+            background-position: center;
+            /* Center the image */
+            background-repeat: no-repeat;
+            /* Do not repeat the image */
+            background-size: cover;
+            /* Resize the background image to cover the entire container */
+        }
+    </style>
+
+    <title>CPIS</title>
+</head>
+
+<body>
+
+    <div class="container main">
+        <!-- BANNER HEADER -->
+        <div class="container bannner">
+            <div>
+                <nav class="bg-gray-800">
+                    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                        <div class="flex items-center justify-between h-16">
+                            <div class="flex items-center">
+                                <div class="flex-shrink-0">
+
+                                </div>
+                                <div class="hidden md:block">
+                                    <div class="ml-10 flex items-baseline space-x-4">
+                                        <h1 class="text-white font-size-xl text-3xl font-bold">Covid Patients
+                                            Information System</h1>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+                    </div>
+
+                    <!-- Mobile menu, show/hide based on menu state. -->
+                    <div class="md:hidden" id="mobile-menu">
+                        <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+                            <h1 class="text-white text-3xl font-bold">Covid Patients Information System </h1>
+                        </div>
+
+
+                    </div>
+            </div>
+            </nav>
+
+            <header class="bg-gray-300 shadow bg-opacity-50 flex">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 flex ">
+                    <h1 class="text-3xl font-bold text-gray-900">
+                        Dashboard
+                    </h1>
+                    <div class="flex font-bold text-gray-900 text-2xl ">
+                        <span class="mx-5  bg-blue-300 rounded-full px-5  bg-opacity-75 ">
+                            <a href="/">Home</a>
+                        </span>
+                        <span class="mx-5  bg-blue-300 rounded-full px-5  bg-opacity-75">
+                            <a href="/">Login</a>
+                        </span>
+
+                    </div>
+
+                </div>
+            </header>
+        </div>
+        <div class="bg-gradient-to-tl">
+            {% block body %}
+
+            {% endblock body %}
+
+
+        </div>
+
+
+        <!-- FOOTER -->
+        <div class="footer">
+            <footer class="text-white bg-gray-800 body-font">
+                <div
+                    class="container px-5 py-2 mx-auto flex items-center sm:flex-row flex-col align-items-center justify-center">
+                    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-900">
+                        <span class="ml-3 text-xl text-white">Covid Patients Information System</span>
+                    </a>
+                    <p
+                        class="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
+                        ©
+                        2021 CPIS —
+                        @SCSR
+                    </p>
+                </div>
+            </footer>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        var btn = document.getElementById('#search')
+
+        btn.onclick(() => {
+
+        })
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

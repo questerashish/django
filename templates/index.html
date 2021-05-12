@@ -1,0 +1,139 @@
+{% extends 'base.html'%}
+
+{% block body %}
+
+<!-- SEARCH FOR PATIENT DATA CONTANER  -->
+<div class="container flex justify-center">
+    <div class="flex justify-center text-3xl font-extrabold mt-5 text--500 bg-blue-300 rounded-full px-5 py-2">
+        <h1>Enter Patient Id to get Data</h1>
+    </div>
+
+</div>
+
+
+<form action="/show_data" method="post"> 
+    {% csrf_token %}
+<div class="container herosearch flex justify-center mt-5">
+
+    <input id="pat_id" name="pat_id" type="text" required
+        class=" bg-red rounded-none relative block w-4/5 px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm text-center border-blue-600"
+        placeholder="Please Enter Patient ID here">
+
+
+</div>
+
+
+
+<div class="flex justify-center mt-5 mb-10">
+    <button type="submit" class="bg-green-200 hover:bg-green-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center "
+        id="search">Search</button>
+
+</div>
+</form>
+<!-- MARQUEES FOR CONTACTS CONTAINER -->
+<div class="container marquees flex justify-center bg-opacity-50">
+
+    <div class="marq border-2 border-black w-4/5 md:w-3/5 text-center bg-gray-200 bg-opacity-50">
+        <span>
+            <h1 class="text-3xl font-bold bg-blue-300">Covid Helpline Numbers</h1>
+        </span>
+        <marquee width="60%" direction="up" height="200px" onmouseover="this.stop();" onmouseout="this.start();">
+            <ul>
+
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+                <li class="text-center">
+                    <span class="text-white font-bold text-xl">Contact Number : </span>
+                    <span class="text-white font-bold text-xl">9876543210</span>
+                </li>
+
+
+            </ul>
+
+        </marquee>
+    </div>
+
+</div>
+
+
+<!-- LOGIN CONTAINER -->
+<div class="container orglogin flex justify-center my-5 mb-18">
+    <div class="min-h-50% flex items-center justify-center bg-blue-300 bg-opacity-75 px-4 sm:px-6 lg:px-8 sm:py-5">
+        <div class="max-w-md w-full space-y-8">
+
+
+            <h2 class="mt-6 text-center text-3xl font-extrabold ">
+                Hospital/Branch Login
+            </h2>
+
+            <form class="mt-8 space-y-6" action="/login" method="POST">
+                {% csrf_token %}
+                <input type="hidden" name="remember" value="true">
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="username" class="text-xl font-bold ">Username</label>
+                        <input id="username" name="username" type="text" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="Username">
+                    </div>
+                    <div>
+                        <label for="password" class="text-xl font-bold">Password</label>
+                        <input id="password" name="password" type="password" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="Password">
+                    </div>
+                    <div>
+                        <label for="usertype" class="text-xl font-bold">User-Type</label>
+                        <input id="usertype" name="usertype" type="text" required
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                            placeholder="User Type">
+                    </div>
+                </div>
+                <div>
+                    <button type="submit" value="login"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text- font-medium rounded-md text-black bg-green-200 hover:bg-green-400 text-gray-800 font-bold focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+
+                        Login
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="h-24">
+
+</div>
+
+
+{% endblock body %}

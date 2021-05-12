@@ -1,0 +1,37 @@
+
+        {% for obj in patients %}
+
+        <thead class="text-black">
+            <tr class="bg-blue-300 flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+
+                <th class="p-3 text-left">Patient ID</th>
+                <th class="p-3 text-left">Gender</th>
+                <th class="p-3 text-left">Age</th>
+                <th class="p-3 text-left">Date of Admission</th>
+                <th class="p-3 text-left">Diagnosis</th>
+                <th class="p-3 text-left">Prescription</th>
+                <th class="p-3 text-left">NOK Address</th>
+                <th class="p-3 text-left">Hospital</th>
+                <th class="p-3 text-left">Branch</th>
+                <th class="p-3 text-left" width="110px">Actions</th>
+            </tr>
+
+
+        </thead>
+        <tbody class="flex-1 sm:flex-none">
+            <tr class="flex flex-col flex-no wrap sm:table-row rounded-l-lg sm:rounded-none mb-2 sm:mb-0">
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.patient_id}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.gender}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.age}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.date_adm}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.diagnosis}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.prescription}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3 truncate ">{{obj.nok_add}} </td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3">{{obj.hosp_name}}</td>
+                <td class="border-grey-light border hover:bg-gray-100 p-3 ">{{obj.ward}}</td>
+                <td
+                    class="border-grey-light border hover:bg-gray-100 p-3 text-red-400 hover:text-red-600 hover:font-medium cursor-pointer">
+                    Delete</td>
+            </tr>
+        </tbody>
+        {% endfor %}
